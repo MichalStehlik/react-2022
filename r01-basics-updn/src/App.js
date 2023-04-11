@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import {useState} from "react"
+import Veverka from "./components/DisplayNumber"
+import {DisplayNumber} from "./components/DisplayNumber"
+import {UpDown} from "./components/UpDown"
 
 function App() {
+  const [a, setA] = useState(1);
+  const [b, setB] = useState(1);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>
+        <Veverka value="4"/>
+      </div>
+      <UpDown value={a} setValue={setA} />
+      <UpDown value={b} setValue={setB} />
+      <UpDown value={b} setValue={setB} />
+      <DisplayNumber value={a + b}/>
     </div>
   );
 }
